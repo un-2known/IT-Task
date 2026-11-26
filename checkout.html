@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+   <nav>
+      <img src="pics/logo.png" alt="logo" id="logo" />
+
+      <ul>
+         <a>Home</a>
+         <a>Menu</a>
+         <a>About</a>
+         <a>Register/login</a>
+      </ul>
+   </nav>
+
+   <div id="checkout">
+      <div id="left">
+         <h1>Your cart</h1>
+         <hr>
+         <ol>
+            <li class="cart-item">
+               <img src="pics/food (4).jpeg" alt="" />
+               <div>
+                  <span class="title">Soft Tofu / 순두부찌개</span>
+                  <div class="price-count-wrapper">
+                     <span class="price" data-value="80">80.00 LE</span>
+                     <div class="counter">
+                        <button class="icon"><img src="pics/miuns.svg" alt="-" /></button>
+                        <span>1</span>
+                        <button class="icon"><img src="pics/add.svg" alt="+" /></button>
+                     </div>
+                     <button class="icon"><img src="pics/delete.svg" alt="" /></button>
+                  </div>
+               </div>
+            </li>
+            <li class="cart-item">
+               <img src="pics/food (5).jpeg" alt="" />
+               <div>
+                  <span class="title"> Ramen Hot Pot / 매운 라면 </span>
+                  <div class="price-count-wrapper">
+                     <span class="price" data-value="150">150.00 LE</span>
+                     <div class="counter">
+                        <button class="icon"><img src="pics/miuns.svg" alt="-" /></button>
+                        <span>1</span>
+                        <button class="icon"><img src="pics/add.svg" alt="+" /></button>
+                     </div>
+                     <button class="icon"><img src="pics/delete.svg" alt="" /></button>
+                  </div>
+               </div>
+            </li>
+            <li class="cart-item">
+               <img src="pics/food (6).jpeg" alt="" />
+               <div>
+                  <span class="title"> Sausage / 소시지 </span>
+                  <div class="price-count-wrapper">
+                     <span class="price" data-value="120">120.00 LE</span>
+                     <div class="counter">
+                        <button class="icon"><img src="pics/miuns.svg" alt="-" /></button>
+                        <span>1</span>
+                        <button class="icon"><img src="pics/add.svg" alt="+" /></button>
+                     </div>
+                     <button class="icon"><img src="pics/delete.svg" alt="" /></button>
+                  </div>
+               </div>
+            </li>
+         </ol>
+         <hr>
+         <div id="total">
+            <h2>Total:</h2>
+            <span></span>
+         </div>
+      </div>
+      <div class="break"></div>
+      <div id="right">
+         <h1>Chekout</h1>
+         <div id="delivery-address">
+            <label for="address">Delivery Address</label>
+            <input type="text" id="address" placeholder="enter your address" />
+         </div>
+         <div id="payment">
+            <span>
+               <input type="radio" name="payment" id="cash" />
+               <label for="cash">Cash on Delivery</label>
+            </span>
+            <span>
+
+               <input type="radio" name="payment" id="card" />
+               <label for="card">Card Payment</label>
+            </span>
+         </div>
+         <input type="submit" value="Place Order →" />
+      </div>
+   </div>
+
+   <script>
+      function update_total() {
+         let total = 0;
+
+         document.querySelectorAll(".cart-item").forEach(e => {
+            let count_span = e.querySelector(".counter span")
+            let count = +count_span.innerText
+            let price = e.querySelector(".price")
+            const unitPrice = Number(price.dataset.value);
+            total += count * unitPrice;
+
+            console.log(e)
+         })
+
+         document.querySelector('#total span').innerText = `${Number(total).toFixed(2)} LE`;
+      }
+
+      update_total()
+
+      document.querySelectorAll(".cart-item").forEach(e => {
+         let [minus, plus, delete_btn] = [...e.querySelectorAll("button")]
+         let count_span = e.querySelector(".counter span")
+         let price = e.querySelector(".price")
+         const unitPrice = Number(price.dataset.value);
+         let count = 1;
+
+         let update_counter = _ => {
+            if (count < 1) {
+               count = 1
+            }
+
+            if (count > 10) {
+               count = 10
+            }
+
+            count_span.innerText = count;
+            price.innerText = `${Number(count * unitPrice).toFixed(2)} LE`;
+
+            update_total()
+         };
+
+         plus.addEventListener('click', _ => {
+            count++
+            update_counter()
+         })
+
+         minus.addEventListener('click', _ => {
+            count--
+            update_counter()
+         })
+
+         delete_btn.addEventListener('click', _ => {
+            e.remove()
+            update_total()
+         })
+
+      })
+   </script>
+</body>
+
+</html>

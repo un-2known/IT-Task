@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ramyun</title>
+   <style>
+      :root {
+         --text: #050316;
+         --bg: #f1e7e4;
+         --primary: #7e2726;
+         --secondary: #ca3f3f;
+         --accent: #f7eee9;
+      }
+
+      body {
+         font-family: Arial;
+         background: var(--bg);
+         color: var(--text);
+         text-align: center;
+         margin: 0
+      }
+
+      .header {
+         background: var(--primary);
+         color: var(--accent);
+         padding: 18px;
+         font-size: 20px;
+         font-weight: bold
+      }
+
+      .box {
+         background: var(--accent);
+         width: 90%;
+         max-width: 460px;
+         margin: 25px auto;
+         padding: 22px;
+         border-radius: 22px;
+         text-align: left;
+         box-shadow: 0 4px 15px rgba(126, 39, 38, 0.15);
+         line-height: 1.6
+      }
+
+      button {
+         background: var(--secondary);
+         color: white;
+         border: none;
+         padding: 11px 22px;
+         border-radius: 20px;
+         cursor: pointer;
+         font-weight: bold
+      }
+
+      img {
+         width: 65%;
+         max-width: 220px;
+         border-radius: 20px;
+         margin-top: 15px;
+         box-shadow: 0 3px 10px rgba(126, 39, 38, 0.2);
+      }
+
+      h3 {
+         color: var(--primary)
+      }
+
+      .price {
+         color: var(--secondary);
+         font-weight: bold
+      }
+
+      nav {
+         box-sizing: border-box;
+         display: flex;
+         width: 100%;
+         justify-content: space-between;
+         align-items: center;
+         padding: 0.5em 1em;
+      }
+
+      nav ul {
+         display: flex;
+         margin: 0;
+         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+         & a {
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+               scale: 1.1;
+            }
+         }
+      }
+
+      img#logo {
+         width: 3rem;
+         border-radius: 0;
+         margin-top: 0;
+         box-shadow: none;
+      }
+
+      .brand {
+         display: flex;
+         align-items: center;
+         gap: 0.4rem;
+      }
+
+      .brand-name {
+         font-family: Georgia, 'Times New Roman', Times, serif;
+         font-weight: bold;
+      }
+   </style>
+</head>
+
+<body>
+   <nav>
+      <div class="brand">
+         <img src="/pics/logo.png" alt="logo" id="logo" />
+         <span class="brand-name">SEOUL BITE</span>
+      </div>
+
+      <ul>
+         <a href="../home.html">Home</a>
+         <a href="../home.html#popular">Menu</a>
+         <a href="">About</a>
+         <a href="">Register/login</a>
+      </ul>
+   </nav>
+
+   <div class="header">Ramyun 라면</div>
+   <img src="/pics/Ramyun.jpg">
+   <div class="box">
+      <h3>Ramyun - 라면</h3>
+      <p>Ramyun is Korean instant noodles, but much more delicious than regular noodles. It is a spicy soup made with
+         chewy noodles, rich chili broth, egg, seaweed, and green onions. Sometimes cheese and kimchi are added on top.
+      </p>
+      <p>It is the most popular comfort food for Korean students, especially on cold and rainy days. Koreans love to eat
+         it directly from the pot.</p>
+      <b>Ingredients:</b>
+      <ul>
+         <li>Noodles, Spicy broth</li>
+         <li>Egg, Seaweed, Green onion</li>
+      </ul>
+      <p><b>Taste:</b> Very spicy, salty, and umami.</p>
+      <p><b>Fun Fact:</b> Korea is the number one country in the world for eating instant noodles.</p>
+      <p class="price">Price: 130 LE</p>
+      <button onclick="alert('Order placed!')">Order Now</button>
+   </div>
+   <a href="../home.html"><button style="background:var(--primary)">← Back to Menu</button></a>
+</body>
+
+</html>
