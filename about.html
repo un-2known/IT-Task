@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>About Us - Hanok</title>
+
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      body {
+         font-family: Georgia, serif;
+         background: #f8f0eb;
+         color: #211b19;
+      }
+
+      /* Header */
+      header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 20px 5%;
+         background: #fffaf6;
+         border-bottom: 1px solid #eadbd3;
+      }
+
+      .logo {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         font-size: 22px;
+         font-weight: bold;
+         color: #632f2d;
+      }
+
+      .logo img {
+         width: 50px;
+         height: 50px;
+         object-fit: contain;
+         border-radius: 50%;
+      }
+
+      nav a {
+         text-decoration: none;
+         color: #29201e;
+         margin-left: 20px;
+         font-size: 14px;
+      }
+
+      nav a:hover {
+         color: #a52e35;
+      }
+
+      .cart {
+         font-size: 22px;
+      }
+
+      /* About Section */
+      .hero {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 45px 5%;
+         gap: 35px;
+      }
+
+      .about-text {
+         width: 50%;
+      }
+
+      .about-text h1 {
+         font-size: 38px;
+         margin-bottom: 12px;
+         color: #632f2d;
+      }
+
+      .subtitle {
+         font-size: 18px;
+         margin-bottom: 20px;
+         color: #735e55;
+      }
+
+      .description {
+         font-size: 15px;
+         line-height: 1.9;
+         color: #51413b;
+      }
+
+      .description strong {
+         color: #a52e35;
+         font-size: 17px;
+      }
+
+      .about-image {
+         width: 50%;
+         height: 420px;
+         border-radius: 15px;
+         background-image: url("pics/bg.jpg");
+         background-size: cover;
+         background-position: center;
+      }
+
+      /* Community */
+      .community {
+         margin-top: 25px;
+         padding: 20px;
+         background: #fffaf6;
+         border-radius: 12px;
+         border: 1px solid #eadbd3;
+      }
+
+      .community h3 {
+         color: #a52e35;
+         margin-bottom: 10px;
+      }
+
+      .community p {
+         margin-bottom: 15px;
+      }
+
+      .community a {
+         display: inline-block;
+         text-decoration: none;
+         color: white;
+         background: #79534b;
+         padding: 10px 18px;
+         border-radius: 7px;
+         margin: 5px 5px 5px 0;
+         transition: 0.3s;
+      }
+
+      .community a:hover {
+         background: #a52e35;
+      }
+
+      /* Team */
+      .team {
+         padding: 25px 5% 35px;
+      }
+
+      .team h2 {
+         font-size: 26px;
+         margin-bottom: 25px;
+         text-align: center;
+         color: #632f2d;
+      }
+
+      .team-members {
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         gap: 25px;
+         text-align: center;
+      }
+
+      .member {
+         background: #fffaf6;
+         padding: 20px 10px;
+         border-radius: 12px;
+         border: 1px solid #eadbd3;
+      }
+
+      .member img {
+         width: 100px;
+         height: 100px;
+         border-radius: 50%;
+         object-fit: cover;
+         margin-bottom: 12px;
+      }
+
+      .member h3 {
+         font-size: 16px;
+         margin-bottom: 7px;
+      }
+
+      .member p {
+         font-size: 13px;
+         color: #79665e;
+      }
+
+      /* Footer */
+      footer {
+         text-align: center;
+         padding: 25px 10px;
+         color: #63433e;
+         font-style: italic;
+         font-size: 17px;
+         background: #fffaf6;
+      }
+
+      footer span {
+         color: #a52e35;
+      }
+
+      /* Mobile */
+      @media(max-width:600px) {
+
+         header {
+            padding: 15px 3%;
+         }
+
+         .logo {
+            font-size: 16px;
+         }
+
+         nav a {
+            margin-left: 8px;
+            font-size: 11px;
+         }
+
+         .hero {
+            flex-direction: column;
+            padding: 25px 5%;
+         }
+
+         .about-text,
+         .about-image {
+            width: 100%;
+         }
+
+         .about-text h1 {
+            font-size: 32px;
+         }
+
+         .about-image {
+            height: 230px;
+         }
+
+         .team-members {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+         }
+
+         .community {
+            padding: 15px;
+         }
+      }
+
+
+      nav {
+         box-sizing: border-box;
+         display: flex;
+         width: 100%;
+         justify-content: space-between;
+         align-items: center;
+         padding: 0.5em 1em;
+      }
+
+      nav ul {
+         display: flex;
+         margin: 0;
+         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+         & a {
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+               scale: 1.1;
+            }
+         }
+      }
+
+      img#logo {
+         width: 3rem;
+         border-radius: 0;
+         margin-top: 0;
+         box-shadow: none;
+      }
+
+      .brand {
+         display: flex;
+         align-items: center;
+         gap: 0.4rem;
+      }
+
+      .brand-name {
+         font-family: Georgia, 'Times New Roman', Times, serif;
+         font-weight: bold;
+      }
+   </style>
+</head>
+
+<body>
+
+
+   <nav>
+      <div class="brand">
+         <img src="../pics/logo.png" alt="logo" id="logo" />
+         <span class="brand-name">Hanok</span>
+      </div>
+
+      <ul>
+         <a href="../home.html">Home</a>
+         <a href="../home.html#popular">Menu</a>
+         <a href="../checkout.html">Checkout</a>
+         <a href="">About</a>
+         <a href="">Register/login</a>
+      </ul>
+   </nav>
+
+   <section class="hero">
+
+      <div class="about-text">
+
+         <h1>About Us</h1>
+
+         <p class="subtitle">Who We Are?</p>
+
+         <p class="description">
+
+            We are first-year students at the Faculty of
+            Computers and Information, Kafrelsheikh University.
+
+            <br><br>
+
+            <strong>Our Project</strong>
+
+            <br>
+
+            HANOK is our student project, created to apply
+            our web design and programming skills.
+
+            <br><br>
+
+            We hope you enjoy visiting our website.
+            Thank you for being here!
+
+         </p>
+
+         <div class="community">
+
+            <h3>Community & Contact</h3>
+
+            <p>
+               Want to connect with us?
+               Follow us or send us a message.
+            </p>
+
+            <a href="https://www.facebook.com/" target="_blank">
+               Facebook
+            </a>
+
+            <a href="https://wa.me/201000675875" target="_blank">
+               WhatsApp
+            </a>
+
+            <p style="margin-top:15px;">
+               감사합니다 - Thank You! 💖
+            </p>
+
+         </div>
+
+      </div>
+
+      <div class="about-image"></div>
+
+   </section>
+
+   <section class="team">
+
+      <h2>Meet Our Team</h2>
+
+      <div class="team-members">
+
+
+         <div class="member">
+            <img src="pics/anna.jpg" alt="Anna">
+            <h3>Anna</h3>
+            <p>Details & Media</p>
+         </div>
+
+         <div class="member">
+            <img src="pics/a.jpg" alt="Ahmed">
+            <h3>Ahmed</h3>
+            <p>Menu & Checkout</p>
+         </div>
+
+         <div class="member">
+            <img src="pics/eslam.jpg" alt="Eslam">
+            <h3>Eslam</h3>
+            <p>Login & Register</p>
+         </div>
+
+
+         <div class="member">
+            <img src="pics/shurooq.jpg" alt="Shrouk">
+            <h3>Shrouk</h3>
+            <p>About & Welcome</p>
+         </div>
+
+      </div>
+
+   </section>
+
+   <footer>
+      Thank you for being with us! <span>♥</span>
+   </footer>
+
+</body>
+
+</html>
