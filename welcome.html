@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Welcome - Seoul Bite</title>
+
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      body {
+         font-family: Georgia, serif;
+         background: #171211;
+      }
+
+      .hero {
+         min-height: 100vh;
+         background:
+            linear-gradient(rgba(0, 0, 0, .55),
+               rgba(0, 0, 0, .45)),
+            url("pics/bg2.jpg");
+
+         background-size: cover;
+         background-position: center;
+         color: white;
+         position: relative;
+      }
+
+      header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 25px 5%;
+         background: rgba(0, 0, 0, .65);
+      }
+
+      .logo {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         font-size: 22px;
+         font-weight: bold;
+         color: #632f2d;
+      }
+
+      .logo img {
+         width: 50px;
+         height: 50px;
+         object-fit: contain;
+         border-radius: 50%;
+      }
+
+      nav a {
+         color: white;
+         text-decoration: none;
+         margin-left: 20px;
+         font-size: 14px;
+      }
+
+      .content {
+         position: absolute;
+         top: 30%;
+         left: 5%;
+      }
+
+      h1 {
+         font-size: 48px;
+         line-height: 1.2;
+         margin-bottom: 20px;
+      }
+
+      h1 span {
+         color: #bd555d;
+      }
+
+      p {
+         font-size: 17px;
+         margin-bottom: 30px;
+      }
+
+      .btn {
+         display: inline-block;
+         background: #a52e35;
+         color: white;
+         padding: 14px 28px;
+         border-radius: 25px;
+         text-decoration: none;
+      }
+
+      .scroll {
+         position: absolute;
+         bottom: 25px;
+         left: 5%;
+         font-size: 14px;
+      }
+
+      @media(max-width:600px) {
+         h1 {
+            font-size: 38px;
+         }
+
+         nav a {
+            margin-left: 8px;
+            font-size: 12px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+
+   <section class="hero">
+
+      <div class="content">
+         <h1>
+            Taste<br>
+            the Real<br>
+            <span>Korean</span> Flavor
+         </h1>
+
+         <p>Authentic. Fresh. Delicious.</p>
+
+         <a href="home.html" class="btn">
+            Get Started →
+         </a>
+      </div>
+
+      <div class="scroll">
+         Scroll Down ↓
+      </div>
+
+   </section>
+
+</body>
+
+</html>
